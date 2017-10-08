@@ -442,7 +442,7 @@
 %\markboth{Journal of \LaTeX\ Class Files,~Vol.~13, No.~9, September~2014}%
 %{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Computer Society Journals}
 
-\markboth{Redes de Computadoras Avanzadas, Septiembre 2017}%
+\markboth{Redes de Computadoras Avanzadas, Octubre 2017}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Computer Society Journals}
 
 
@@ -661,19 +661,76 @@ También cabe destacar que algunos enrutadores pueden analizar la cabecera del p
 
 \subsection{Fast reroute}
 
+%\begin{figure*}[h]
+%    \center
+%    \includegraphics[width=15cm]{sdn-history}
+%    \caption{Desarrollos selectos en el campo de redes programables en los últimos 20 años. Tomado de \emph{The Road to SDN}\cite{rexford}.}
+%    \label{fig:tradicitional-architecture}
+%\end{figure*}
+
+
+\section{DWDM}
+El crecimiento exploito del Internet y de aplicaciones basadas en el protocolo de Internet (IP) tales como voz, video y redes de área de almacenamiento (SAN, por sus siglas en inglés) ha impulsado las demandas de ancho de banda de muchas organizaciones. Con las velocidades de redes LAN en el rango de los 10Mbps a los 10Gbps, y la calidad de servicio (QoS) jugando un rol importante en la entrega de estos datos, debe de existir un alternativa a servicios WAN y LAN para conectar redes de área metropolitana (MAN). Las conexiones de red que tradicionalmente llevaban velocidades de datos \textsc{T1} y \textsc{T3} ahora requieren de canal de fibra, \emph{Enterprise System Connection} (ESCON), Gigabit Ethernet y 10 Gigabit Ethernet para satisfacer la demanda. El aumento en la demando, junto con los avances en la tecnología óptica han aumentado drásticamente la capacidad y reducción de costos, haciendo más atractivo a los proveedores de servicios ofrecer servicios de red basedos en fibra para el mercado metropolitano. 
+
+Las redes metropolitanas basadas en fibra abordan necesidades de negociones en tres áreas:
+\begin{enumerate}
+    \item Redes de datos y migración: tecnologías de red ópticas ofrecen muchas velocidades de datos y conexiones que soportan una variedad de tecnologías de red, tales como IP, \emph{synchronous optical networks} (SONET), ATM, y TDM. Las redes pueden consolidar múltiples longitudes de onda de tráfico a una sola fibra para proporcionar multiservicio de transporte y facilitar la migración de tecnologías tradicionales de redes eléctricas en un trasponer óptico común.
+    \item Recuperación de desastres y continuidad de negocio: tener un centro de respaldo de datos es una consideración primaria para muchas compañías grandes de hoy. Las redes ópticas metropolitanas proporcionan transporte rápido de \emph{campus} a \emph{campus} con redundancia. Soluciones de recuperación de desastres en tiempo real, tales como reflejo sincrónico (\emph{synchronous mirroring}), garantizan que los datos de misión crítica estan sincronizados de forma segura y remota para evitar pérdida de datos en el caso de un evento desastroso.
+    \item Consolidación del almacenamiento: cuando el almacenamiento conectado a la red (NAS) se integra con aplicaciones SAN se provee consolidación de almacenamiento basado en IP y compartición de archivos. Las redes ópticas metropolitanas facilitan no solo la implementación del almacenamiento, sino también la extensión del almacenamiento más allá de un solo centro de datos. 
+   \item Fibra residencial: conforma la fibra se hace más accesible en costos, ha empezado a penetrar en el mercado residencial.
+\end{enumerate}
+
+
+Las tres principales tecnologías ópticas hoy en día son:
+\begin{enumerate}
+    \item \emph{Synchronous Optional NET} (SONET)
+    \item \emph{Dense wavelength division multiplexing} (DWDM)
+    \item \emph{Dynamic packet transport} (DPT)
+\end{enumerate}
+
+Las tres convierten señales eléctricas en luz y viceversa. Los \emph{Fiber-Optic Transmission Systems} (FOTS) hacen la conversión. Las señales de fibra óptica no son suceptibles a la interferencia eléctrica. Las señales se pueden transmitir en distancias largas y pueden enviar más información que los medio de trasporte eléctricos tradicionales. La combinación de estos beneficiones provee costos más bajo que en mecanismos de transporte de datos eléctricos tradicionales.
+
+DWDM se basa en la premisa que las señales ópticas de diferente longitud de onda no interfieren entre sí. Multiplexación por división de longitud de onda (WDM) difiere de tecnologías de multiplexación de división de tiempo (como SONET) de la siguiente forma:
+\begin{itemize}
+    \item \emph{Time-Division Multiplexing} (TDM) emplea una sola longitud de one a través de la fibra. Los datos son divididos en canales del tal form que múltiples canales pueden viajar a través de una sola fibra.
+    \item WDM emplea múltimples longitudes de onda (lambdas) por fibra, lo que permite que múltiples canales por fibra (hasta 160). Cada lambda puede incluir múltiples canales TDM.
+\end{itemize}
+
+DWDM ofrece escalabilidad por sobre las tecnologías tradiciones de TDM. Esto por los datos pueden viajar considerablemente más lejos a través de DWDM que en TDM tradicionales (120Km vs 40 Km), se necesitan menos repetidoras. DWDM también permite una mayor capacidad a través de las fibras de largo recorrido, así como un rápido provisionamiento en las redes metropolitanas. DWDM metropolitanos necesitan ser baratos y simples de gestionar. Deben también ser independientes de las tasas de bits y protocolo como transporte y proporcionar de 16 a 32 canales por fibra. Los nodos DWDM se unen unos con otros en un patrón de anillo usando multiplexadores óptidos \emph{add-drop}, los cuales agregan y evitan tráfico en cada sitio remoto, y todo el tráfico se dirigue a un sitio central.
+
+\subsection{Fundamentos de la fibra}
+Los dos tipo de fibra óptica son multimodo y monomodo. Con fibra multimodo, la luz se propaga en forma de múltiples longitudes de onda, cada una tomando una ruta ligeramente diferente. La fibra multimodo es usada principalmente en sistemas de corta transmisión (menos de 2Km). La fibra monomodo tien un solo modo en el cual la luz se propaga. La fibra monomodo se utiliza usualmente en largas distancias y en aplicaciones de alto ancho de banda.
+
+
 \begin{figure*}[h]
     \center
-    \includegraphics[width=15cm]{sdn-history}
-    \caption{Desarrollos selectos en el campo de redes programables en los últimos 20 años. Tomado de \emph{The Road to SDN}\cite{rexford}.}
-    \label{fig:tradicitional-architecture}
+    \includegraphics[width=8cm]{fibra-multimodo}
+    \caption{Modelo OSI. Tomado de  \emph{Desing of Virtual Private Networks with MPLS}\cite{rexford}.}
+    \label{fig:fibra-multimodo}
 \end{figure*}
 
+\subsection{Criterio de diseño}
+A medida que viajan por las fibras, las señales ópticas están sujetas a deterioro en la forma de atenuación, dispersión y no linealidades, distorsión cromática y distorsión del modo de polatización. Estos factores limitan la distancia y el ancho de banda de las señales ópticas. 
 
+\subsubsection{Multiplexación}
+Multiplexación es el proceso de combinar múltiples señales en un solo cable, fibra o enlace. Con TDM, se introducen señales de baja velocidad, se asignan ranuras de tiempo y se colocan en una salida en serie de velocidad más alta. En el extremo receptor, las señales son reconstruidas.
 
+%% Posible imagen aqui
 
+Una de las propiedades de la luz es que las ondas de luz de diferente longitud de onda no interfieren unas con otras dentro de un medio. Debido a esta propiedad, cada longitud de onda de luz puede representar un canal diferente de información. Al combinar pulsos de luz de diferente longitud de onda, muchos canals pueden ser transmitidos sobre una sola fibra simultaneamente. A esto se le llama Multiplexación por división de longitud de onda (WDM). WDM es una variante de multiplexación de división de frecuencia (FDM).
 
+\subsubsection{Optical Ethernet}
+Gigabit Ethernet es la forma más simple y barata de transporte óptico. Optical Ethernet utiliza un dispositivo llamado convertidores de interface gigabit (GBIC), el cual se conecta a un puerto de un \emph{switch} y convierte un flujo Ethernet en una señal óptica.
 
+\subsubsection{CWDM}
+\emph{Coarse Wavelength Division Multiplexing} (CWDM) utiliza pares de GBICs de longitud de onda específicos para combinar hasta ocho señales ópticas en una sola fibra. Cada para de \emph{switches} está equipado con uno o más pares de GBICs. Cada par de GBICs se sintoniza con una frecuencia específica que permita que el \emph{switch} añada (mux) o ``arrebate'' (demux) un rayo de luz (un flujo de datos).
 
+CWDM puede ser implementado como un anillo o punto-a-punto. Un gran inconveniente de CDWM es que no puede ser amplificado, lo que hace que esta solución tenga una distancia limitada. La regla que se sugiere es una distancia de 80 Km para punto-a-punto o una circunferencia de anillo de 30 Km.
+
+\subsubsection{DWDM}
+Usa el mismo esquema de multiplexación qeu CWDM. Sin embargo, las señales DWDM, están mucho más cerca unas de otras, permitiendo a los sistemas DWDM multiplexar hasta 32 señales en una sola fibra. 
+
+Las señales DWDM pueden ser amplificadas, haciendo este sistema el ideal para centros de respaldo de datos o para organizaciones con sucursales geograficamente dispersas. Con amplificación, las señales DWDM pueden ser transmitidas hasta 250Km.
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
@@ -777,7 +834,7 @@ También cabe destacar que algunos enrutadores pueden analizar la cabecera del p
 
 
 
-\section{Conclusion}
+\section{Conclusión}
 
 
 
@@ -857,10 +914,12 @@ También cabe destacar que algunos enrutadores pueden analizar la cabecera del p
 CISCO. \emph{MPLS Concepts}. \hskip 1em plus 0.5em minus 0.4em\relax CISCO, Implementing CISCO MPLS. 2002.
 
 \bibitem{cittadini}
-L.~Cittadini. \emph{Desing of Virtual Private Networks with MPLS)}. \hskip 1em plus 0.5em minus 0.4em\relax University of Cambridge.
+L.~Cittadini. \emph{Desing of Virtual Private Networks with MPLS}. \hskip 1em plus 0.5em minus 0.4em\relax University of Cambridge.
+
+P.~Della Maggiora, N.~Anderson y J.~Doherty. \emph{Cisco Networking Simplified}.\hskip 1em plus 0.5em minus 0.4em\relax Segunda edición. Cisco Press. 2007.
 
 \bibitem{cittadini}
- E.~Rosen, A. ~Viswanathan, R.~Callon.\emph{ Multiprotocol Label Switching
+E.~Rosen, A. ~Viswanathan, R.~Callon.\emph{ Multiprotocol Label Switching
 Architecture )}. \hskip 1em plus 0.5em minus 0.4em\relax . RFC 3031, 2001 
 
 \end{thebibliography}
